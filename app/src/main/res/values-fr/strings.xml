@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Gestion des Dechets</string>
+    <string name="app_title">Classificateur Intelligent de Dechets</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">Classification de l\'image en cours...</string>
+    <string name="result_placeholder">Selectionnez ou capturez une image pour classifier le type de dechet et obtenir des conseils d\'elimination</string>
+    <string name="permissions_required">Les autorisations de camera et de stockage sont necessaires pour une fonctionnalite complete</string>
+    <string name="camera_permission_required">L\'autorisation de la camera est necessaire pour prendre des photos</string>
+    <string name="error_creating_temp_file">Erreur lors de la creation du fichier temporaire pour la photo</string>
+    <string name="error_loading_image">Erreur lors du chargement de l\'image</string>
+    <string name="choose_image">Choisir une Image</string>
+    <string name="take_photo">Prendre une Photo</string>
+    <string name="image_preview">Apercu de l\'Image</string>
+    
+    <!-- User Profile Strings -->
+    <string name="profile">Profil</string>
+    <string name="user_profile">Profil Utilisateur</string>
+    <string name="save_profile">Enregistrer le Profil</string>
+    <string name="waste_history">Historique de Classification des Dechets</string>
+    <string name="no_history">Pas encore d\'historique de classification</string>
+    <string name="name_hint">Nom</string>
+    <string name="email_hint">Email</string>
+    <string name="profile_updated">Profil mis a jour avec succes</string>
+    
+    <!-- Language Settings Strings -->
+    <string name="language_settings">Parametres de Langue</string>
+    <string name="select_language">Selectionner la Langue</string>
+    <string name="language_description">Choisissez votre langue preferee pour l\'interface de l\'application</string>
+    <string name="language_note">L\'application va redemarrer pour appliquer le changement de langue</string>
+    <string name="language_changed">Langue changee avec succes</string>
+    <string name="settings">Parametres</string>
+    <string name="ai_assistant">Assistant IA</string>
+</resources>

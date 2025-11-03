@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">अपशिष्ट प्रबंधन</string>
+    <string name="app_title">स्मार्ट अपशिष्ट वर्गीकरण</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">छवि वर्गीकरण हो रहा है...</string>
+    <string name="result_placeholder">अपशिष्ट प्रकार को वर्गीकृत करने और निपटान सलाह प्राप्त करने के लिए एक छवि का चयन करें या कैप्चर करें</string>
+    <string name="permissions_required">पूर्ण कार्यक्षमता के लिए कैमरा और स्टोरेज अनुमतियां आवश्यक हैं</string>
+    <string name="camera_permission_required">फोटो लेने के लिए कैमरा अनुमति आवश्यक है</string>
+    <string name="error_creating_temp_file">फोटो के लिए अस्थायी फ़ाइल बनाने में त्रुटि</string>
+    <string name="error_loading_image">छवि लोड करने में त्रुटि</string>
+    <string name="choose_image">छवि चुनें</string>
+    <string name="take_photo">फोटो लें</string>
+    <string name="image_preview">छवि पूर्वावलोकन</string>
+    
+    <!-- User Profile Strings -->
+    <string name="profile">प्रोफाइल</string>
+    <string name="user_profile">उपयोगकर्ता प्रोफाइल</string>
+    <string name="save_profile">प्रोफाइल सहेजें</string>
+    <string name="waste_history">अपशिष्ट वर्गीकरण इतिहास</string>
+    <string name="no_history">अभी तक कोई वर्गीकरण इतिहास नहीं</string>
+    <string name="name_hint">नाम</string>
+    <string name="email_hint">ईमेल</string>
+    <string name="profile_updated">प्रोफाइल सफलतापूर्वक अपडेट किया गया</string>
+    
+    <!-- Language Settings Strings -->
+    <string name="language_settings">भाषा सेटिंग्स</string>
+    <string name="select_language">भाषा चुनें</string>
+    <string name="language_description">ऐप इंटरफेस के लिए अपनी पसंदीदा भाषा चुनें</string>
+    <string name="language_note">भाषा परिवर्तन लागू करने के लिए ऐप पुनरारंभ होगा</string>
+    <string name="language_changed">भाषा सफलतापूर्वक बदली गई</string>
+    <string name="settings">सेटिंग्स</string>
+</resources>

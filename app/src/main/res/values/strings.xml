@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Waste Management</string>
+    <string name="app_title">Smart Waste Classifier</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">Classifying image...</string>
+    <string name="result_placeholder">Select or capture an image to classify waste type and get disposal advice</string>
+    <string name="permissions_required">Camera and storage permissions are required for full functionality</string>
+    <string name="camera_permission_required">Camera permission is required to take photos</string>
+    <string name="error_creating_temp_file">Error creating temporary file for photo</string>
+    <string name="error_loading_image">Error loading image</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="image_preview">Image Preview</string>
+    
+
+    
+    <!-- User Profile Strings -->
+    <string name="profile">Profile</string>
+    <string name="user_profile">User Profile</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="waste_history">Waste Classification History</string>
+    <string name="no_history">No classification history yet</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    
+    <!-- Language Settings Strings -->
+    <string name="language_settings">Language Settings</string>
+    <string name="select_language">Select Language</string>
+    <string name="language_description">Choose your preferred language for the app interface</string>
+    <string name="language_note">The app will restart to apply the language change</string>
+    <string name="language_changed">Language changed successfully</string>
+    <string name="settings">Settings</string>
+    <string name="ai_assistant">AI Assistant</string>
+</resources>

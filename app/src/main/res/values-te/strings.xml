@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">వ్యర్థ నిర్వహణ</string>
+    <string name="app_title">స్మార్ట్ వ్యర్థ వర్గీకరణ</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">చిత్రాన్ని వర్గీకరిస్తోంది...</string>
+    <string name="result_placeholder">వ్యర్థ రకాన్ని వర్గీకరించడానికి మరియు పారవేయడానికి సలహాలు పొందడానికి ఒక చిత్రాన్ని ఎంచుకోండి లేదా క్యాప్చర్ చేయండి</string>
+    <string name="permissions_required">పూర్తి కార్యాచరణ కోసం కెమెరా మరియు నిల్వ అనుమతులు అవసరం</string>
+    <string name="camera_permission_required">ఫోటో తీయడానికి కెమెరా అనుమతి అవసరం</string>
+    <string name="error_creating_temp_file">ఫోటో కోసం తాత్కాలిక ఫైల్‌ను సృష్టించడంలో లోపం</string>
+    <string name="error_loading_image">చిత్రాన్ని లోడ్ చేయడంలో లోపం</string>
+    <string name="choose_image">చిత్రాన్ని ఎంచుకోండి</string>
+    <string name="take_photo">ఫోటో తీయండి</string>
+    <string name="image_preview">చిత్రం ప్రివ్యూ</string>
+    
+    <!-- User Profile Strings -->
+    <string name="profile">ప్రొఫైల్</string>
+    <string name="user_profile">వినియోగదారు ప్రొఫైల్</string>
+    <string name="save_profile">ప్రొఫైల్‌ను సేవ్ చేయండి</string>
+    <string name="waste_history">వ్యర్థ వర్గీకరణ చరిత్ర</string>
+    <string name="no_history">ఇంకా వర్గీకరణ చరిత్ర లేదు</string>
+    <string name="name_hint">పేరు</string>
+    <string name="email_hint">ఇమెయిల్</string>
+    <string name="profile_updated">ప్రొఫైల్ విజయవంతంగా నవీకరించబడింది</string>
+    
+    <!-- Language Settings Strings -->
+    <string name="language_settings">భాషా సెట్టింగ్‌లు</string>
+    <string name="select_language">భాషను ఎంచుకోండి</string>
+    <string name="language_description">యాప్ ఇంటర్‌ఫేస్ కోసం మీ ప్రాధాన్య భాషను ఎంచుకోండి</string>
+    <string name="language_note">భాషా మార్పును వర్తింపజేయడానికి యాప్ పునఃప్రారంభమవుతుంది</string>
+    <string name="language_changed">భాష విజయవంతంగా మార్చబడింది</string>
+    <string name="settings">సెట్టింగ్‌లు</string>
+</resources>

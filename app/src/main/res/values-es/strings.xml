@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Gestión de Residuos</string>
+    <string name="app_title">Clasificador Inteligente de Residuos</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">Clasificando imagen...</string>
+    <string name="result_placeholder">Seleccione o capture una imagen para clasificar el tipo de residuo y obtener consejos de eliminación</string>
+    <string name="permissions_required">Se requieren permisos de cámara y almacenamiento para una funcionalidad completa</string>
+    <string name="camera_permission_required">Se requiere permiso de cámara para tomar fotos</string>
+    <string name="error_creating_temp_file">Error al crear archivo temporal para la foto</string>
+    <string name="error_loading_image">Error al cargar la imagen</string>
+    <string name="choose_image">Elegir Imagen</string>
+    <string name="take_photo">Tomar Foto</string>
+    <string name="image_preview">Vista Previa de Imagen</string>
+    
+    <!-- User Profile Strings -->
+    <string name="profile">Perfil</string>
+    <string name="user_profile">Perfil de Usuario</string>
+    <string name="save_profile">Guardar Perfil</string>
+    <string name="waste_history">Historial de Clasificación de Residuos</string>
+    <string name="no_history">Aún no hay historial de clasificación</string>
+    <string name="name_hint">Nombre</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="profile_updated">Perfil actualizado con éxito</string>
+</resources>

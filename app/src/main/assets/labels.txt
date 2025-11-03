@@ -1,0 +1,5 @@
+Glass
+Biodegradable
+Non-Biodegradable
+Organic
+Inorganic

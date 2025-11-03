@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Insert your real Gemini API key here or via resource overlays/secrets -->
+    <string name="gemini_api_key">AIzaSyAwRCaDT21-VYyYqyfetMCG2Fhk02PhEq8</string>
+</resources>
+
+

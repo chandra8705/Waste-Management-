@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ਕੂੜਾ ਪ੍ਰਬੰਧਨ</string>
+    <string name="app_title">ਸਮਾਰਟ ਕੂੜਾ ਵਰਗੀਕਰਨ</string>
+    <string name="prediction_result">%1$s - %2$s%%</string>
+    <string name="classifying">ਚਿੱਤਰ ਵਰਗੀਕਰਨ ਕਰ ਰਿਹਾ ਹੈ...</string>
+    <string name="result_placeholder">ਕੂੜੇ ਦੀ ਕਿਸਮ ਨੂੰ ਵਰਗੀਕਰਨ ਕਰਨ ਅਤੇ ਨਿਪਟਾਰੇ ਦੀ ਸਲਾਹ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਇੱਕ ਚਿੱਤਰ ਚੁਣੋ ਜਾਂ ਕੈਪਚਰ ਕਰੋ</string>
+    <string name="permissions_required">ਪੂਰੀ ਕਾਰਜਸ਼ੀਲਤਾ ਲਈ ਕੈਮਰਾ ਅਤੇ ਸਟੋਰੇਜ ਅਨੁਮਤੀਆਂ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="camera_permission_required">ਫੋਟੋ ਲੈਣ ਲਈ ਕੈਮਰਾ ਅਨੁਮਤੀ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="error_creating_temp_file">ਫੋਟੋ ਲਈ ਅਸਥਾਈ ਫਾਈਲ ਬਣਾਉਣ ਵਿੱਚ ਗਲਤੀ</string>
+    <string name="error_loading_image">ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਵਿੱਚ ਗਲਤੀ</string>
+    <string name="choose_image">ਚਿੱਤਰ ਚੁਣੋ</string>
+    <string name="take_photo">ਫੋਟੋ ਲਓ</string>
+    <string name="image_preview">ਚਿੱਤਰ ਪ੍ਰੀਵਿਊ</string>
+
+    <string name="profile">ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="user_profile">ਉਪਭੋਗਤਾ ਪ੍ਰੋਫਾਈਲ</string>
+    <string name="save_profile">ਪ੍ਰੋਫਾਈਲ ਸੰਭਾਲੋ</string>
+    <string name="waste_history">ਕੂੜਾ ਵਰਗੀਕਰਨ ਇਤਿਹਾਸ</string>
+    <string name="no_history">ਅਜੇ ਤੱਕ ਕੋਈ ਵਰਗੀਕਰਨ ਇਤਿਹਾਸ ਨਹੀਂ</string>
+    <string name="name_hint">ਨਾਮ</string>
+    <string name="email_hint">ਈਮੇਲ</string>
+    <string name="profile_updated">ਪ੍ਰੋਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਅਪਡੇਟ ਕੀਤਾ ਗਿਆ</string>
+
+    <string name="language_settings">ਭਾਸ਼ਾ ਸੈਟਿੰਗਾਂ</string>
+    <string name="select_language">ਭਾਸ਼ਾ ਚੁਣੋ</string>
+    <string name="language_description">ਐਪ ਇੰਟਰਫੇਸ ਲਈ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ</string>
+    <string name="language_note">ਭਾਸ਼ਾ ਬਦਲਾਅ ਲਾਗੂ ਕਰਨ ਲਈ ਐਪ ਮੁੜ ਚਾਲੂ ਹੋਵੇਗੀ</string>
+    <string name="language_changed">ਭਾਸ਼ਾ ਸਫਲਤਾਪੂਰਵਕ ਬਦਲੀ ਗਈ</string>
+    <string name="settings">ਸੈਟਿੰਗਾਂ</string>
+</resources>
