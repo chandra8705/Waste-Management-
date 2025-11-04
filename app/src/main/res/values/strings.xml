@@ -11,6 +11,7 @@
     <string name="choose_image">Choose Image</string>
     <string name="take_photo">Take Photo</string>
     <string name="image_preview">Image Preview</string>
+    <string name="submit">Submit</string>
     
 
     
@@ -32,4 +33,7 @@
     <string name="language_changed">Language changed successfully</string>
     <string name="settings">Settings</string>
     <string name="ai_assistant">AI Assistant</string>
+    
+    <!-- Splash Screen Strings -->
+    <string name="splash_app_name">Waste management Classifier</string>
 </resources>

@@ -33,14 +33,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonProfile: Button
     private lateinit var buttonSettings: Button
     private lateinit var buttonChatbot: Button
+    private lateinit var buttonSubmit: Button
     private lateinit var imagePreview: ImageView
     private lateinit var textResult: TextView
+    private lateinit var textClassificationResult: TextView
 
     private lateinit var pickImageLauncher: ActivityResultLauncher<String>
     private lateinit var takePictureLauncher: ActivityResultLauncher<Uri>
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Array<String>>
 
     private var photoUri: Uri? = null
+    private var currentBitmap: android.graphics.Bitmap? = null
+    private var currentImageUri: Uri? = null
 
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 1001
@@ -56,8 +60,10 @@ class MainActivity : AppCompatActivity() {
         buttonProfile = findViewById(R.id.buttonProfile)
         buttonSettings = findViewById(R.id.buttonSettings)
         buttonChatbot = findViewById(R.id.buttonChatbot)
+        buttonSubmit = findViewById(R.id.buttonSubmit)
         imagePreview = findViewById(R.id.imagePreview)
         textResult = findViewById(R.id.textResult)
+        textClassificationResult = findViewById(R.id.textClassificationResult)
 
         viewModel = ViewModelProvider(this)[WasteClassificationViewModel::class.java]
 
@@ -88,18 +94,35 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        buttonSubmit.setOnClickListener {
+            currentBitmap?.let { bitmap ->
+                submitImageForClassification(bitmap)
+            } ?: run {
+                Toast.makeText(this, "Please select an image first", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         testModelIntegration()
     }
 
     private fun setupObservers() {
         viewModel.predictionResult.observe(this) { prediction ->
+            // Map classification to Organic or Inorganic
+            val wasteCategory = mapToOrganicInorganic(prediction.label)
             val confidencePercent = (prediction.confidence * 100f)
+            
+            // Show classification result prominently
+            textClassificationResult.visibility = android.view.View.VISIBLE
+            textClassificationResult.text = "$wasteCategory\n${"%.1f".format(confidencePercent)}% Confidence"
+            
+            // Show detailed result below
             textResult.text = getString(
                 R.string.prediction_result,
                 prediction.label,
                 "%.2f".format(confidencePercent)
             )
         }
+        
         viewModel.disposalAdvice.observe(this) { advice ->
             if (advice != null) {
                 val predictionText = textResult.text.toString()
@@ -112,10 +135,18 @@ class MainActivity : AppCompatActivity() {
         viewModel.isLoading.observe(this) { isLoading ->
             buttonPick.isEnabled = !isLoading
             buttonCamera.isEnabled = !isLoading
-            textResult.text = if (isLoading) {
-                getString(R.string.classifying)
+            buttonSubmit.isEnabled = !isLoading
+            
+            if (isLoading) {
+                textResult.text = getString(R.string.classifying)
+                textClassificationResult.visibility = android.view.View.GONE
             } else {
-                getString(R.string.result_placeholder)
+                // Classification complete, reset UI to allow new image selection
+                if (currentBitmap != null) {
+                    hideSubmitButton()
+                    currentBitmap = null
+                    currentImageUri = null
+                }
             }
         }
 
@@ -123,6 +154,23 @@ class MainActivity : AppCompatActivity() {
             errorMessage?.let {
                 Toast.makeText(this, it, Toast.LENGTH_LONG).show()
                 viewModel.clearError()
+            }
+        }
+    }
+    
+    private fun mapToOrganicInorganic(label: String): String {
+        return when (label.lowercase()) {
+            "organic", "biodegradable" -> "Organic"
+            "inorganic", "non-biodegradable", "glass", "plastic", "metal" -> "Inorganic"
+            else -> {
+                // Try to determine based on common patterns
+                if (label.contains("organic", ignoreCase = true) || 
+                    label.contains("biodegradable", ignoreCase = true) ||
+                    label.contains("compost", ignoreCase = true)) {
+                    "Organic"
+                } else {
+                    "Inorganic"
+                }
             }
         }
     }
@@ -214,8 +262,19 @@ class MainActivity : AppCompatActivity() {
             inputStream?.close()
             
             if (bitmap != null) {
+                // Store the bitmap and URI for later classification
+                currentBitmap = bitmap
+                currentImageUri = uri
+                
+                // Display the image
                 imagePreview.setImageBitmap(bitmap)
-                viewModel.classifyImage(bitmap, uri)
+                
+                // Show submit button and hide camera/gallery buttons
+                showSubmitButton()
+                
+                // Reset result text
+                textResult.text = getString(R.string.result_placeholder)
+                textClassificationResult.visibility = android.view.View.GONE
             } else {
                 Toast.makeText(this, getString(R.string.error_loading_image), Toast.LENGTH_SHORT).show()
             }
@@ -223,6 +282,23 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.error_loading_image), Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         }
+    }
+    
+    private fun showSubmitButton() {
+        buttonSubmit.visibility = android.view.View.VISIBLE
+        buttonCamera.visibility = android.view.View.GONE
+        buttonPick.visibility = android.view.View.GONE
+    }
+    
+    private fun hideSubmitButton() {
+        buttonSubmit.visibility = android.view.View.GONE
+        buttonCamera.visibility = android.view.View.VISIBLE
+        buttonPick.visibility = android.view.View.VISIBLE
+    }
+    
+    private fun submitImageForClassification(bitmap: android.graphics.Bitmap) {
+        // Classify the image and store the data
+        viewModel.classifyImage(bitmap, currentImageUri)
     }
     
     private fun testModelIntegration() {

@@ -62,13 +62,36 @@ class WasteClassificationViewModel(application: Application) : AndroidViewModel(
     
     private fun saveClassificationRecord(prediction: WasteClassifier.Prediction, advice: WasteAdvisor.DisposalAdvice) {
         val currentUser = userRepository.getCurrentUser()
+        
+        // Map the classification to Organic or Inorganic
+        val wasteCategory = mapToOrganicInorganic(prediction.label)
+        
+        // Store both the original label and the mapped category
+        // Using the mapped category as the primary wasteType for consistency
         wasteRecordRepository.createRecord(
             userId = currentUser.id,
-            wasteType = prediction.label,
+            wasteType = wasteCategory, // Store as Organic or Inorganic
             confidence = prediction.confidence,
             imageUri = currentImageUri?.toString(),
             disposalAdvice = advice.advice
         )
+    }
+    
+    private fun mapToOrganicInorganic(label: String): String {
+        return when (label.lowercase()) {
+            "organic", "biodegradable" -> "Organic"
+            "inorganic", "non-biodegradable", "glass", "plastic", "metal" -> "Inorganic"
+            else -> {
+                // Try to determine based on common patterns
+                if (label.contains("organic", ignoreCase = true) || 
+                    label.contains("biodegradable", ignoreCase = true) ||
+                    label.contains("compost", ignoreCase = true)) {
+                    "Organic"
+                } else {
+                    "Inorganic"
+                }
+            }
+        }
     }
     
     fun loadWasteHistory() {
